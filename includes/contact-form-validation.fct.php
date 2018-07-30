@@ -1,7 +1,5 @@
 <?php
 
-$titles = array('Mr', 'Melle', 'Mme');
-
 function validateData($array) {
   global $titles;
   global $objets;
@@ -26,8 +24,8 @@ function validateData($array) {
   if(!isset($array['message'])) $errors['message'] = ['Missing information'];
   else $errors ['message']= validateMessage($array['message']);
 
-  if(!isset($array['file'])) $errors['file'] = ['Missing information'];
-  else $errors ['file']= validateFile($array['file']);
+  // if(!isset($array['file'])) $errors['file'] = ['Missing information'];
+  // else $errors ['file']= validateFile($array['file']);
 
   if(!isset($array['formatRadio'])) $errors['formatRadio'] = ['Missing information'];
   else $errors ['formatRadio']= validateFormat($array['formatRadio']);

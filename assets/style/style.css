@@ -1,0 +1,32 @@
+body {
+  font-size: 1.3em;
+}
+
+#header-logo {
+  display: inline;
+  margin-left: 10px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#header-title {
+  display: inline;
+  margin-left: 5px;
+}
+
+.ind-par {
+  width: 800px;
+  display: inline-block;
+}
+
+.ind-par-left {
+  display: float;
+  float: left;
+  margin-left: 80px;
+}
+
+.ind-par-right {
+  display: float;
+  float: right;
+  margin-right: 80px;
+}

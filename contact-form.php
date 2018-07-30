@@ -31,7 +31,7 @@ require __DIR__.'/templates/header.php';
 
 ?>
 <div class="container">
-  
+
   <form enctype="multipart/form-data" action="" method="post">
     <div class="row">
       <div class="col-sm-2">Titre</div>
@@ -83,7 +83,7 @@ require __DIR__.'/templates/header.php';
               <?php echo $errors['nom'][0]; ?>
             </div>
             <?php
-          } else echo 'prout';
+          }
         }
         ?>
       </div>
@@ -153,17 +153,54 @@ require __DIR__.'/templates/header.php';
     </div>
 
   </form>
-</div>
+
 
 <?php
+$current_data = json_decode(file_get_contents(__DIR__.'/storage/logs.json'));
+echo '<pre>'.print_r($current_data, TRUE).'</pre>';
+
+echo '<div style="border:1px solid blue">';
+echo isset($_FILES['file']) ? "true" : "false";
+$accepted_types = array(IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG);
+$type = exif_imagetype($_FILES['file']['tmp_name']);
+if(!$type) echo '<p>Type de fichier invalide !</p>';
+else {
+  echo '<p>'.$type.'</p>';
+  if(in_array($type, $accepted_types)) {
+    echo '<p>Chill</p>';
+    require __DIR__.'/vendor/verot/class.upload.php/src/class.upload.php';
+    $handle = new Upload($_FILES['file']);
+    if($handle->uploaded) {
+      $handle->Process(__DIR__.'/storage/img-uploads/');
+      if($handle->processed) {
+        echo '<p>Upload réussi !</p>';
+      }
+      else {
+        echo '<p>Upload failed</p>';
+      }
+      $handle->Clean();
+    }
+  }
+  else {
+    echo '<p>noooo</p>';
+  }
+}
+echo '</div>';
 
 echo '<pre>'.print_r($_FILES, TRUE).'</pre>';
 echo '<pre>'.print_r($_POST, TRUE).'</pre>';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // validateData($_POST);
+  echo '<p>'.count($errors).'</p>';
   echo '<pre>'.print_r(validateData($_POST), TRUE).'</pre>';
 }
+
+?>
+
+</div>
+
+<?php
 
 require __DIR__.'/templates/footer.php'
 

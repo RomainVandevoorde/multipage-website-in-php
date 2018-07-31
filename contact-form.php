@@ -20,14 +20,31 @@ function oldValue($valId) {
 
 // $dataInputs = array('titreRadio', 'nom', 'prenom', 'email', 'objet', 'message', 'file');
 
-$titles = array('Mr', 'Melle', 'Mme', 'prout');
-$objets = array("Demande d'informations", "Demande de rendez-vous");
+$titles = array('Mr', 'Melle', 'Mme');
+$objets = array("Demande d'informations", "Demande de rendez-vous", "Autre");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') $errors = validateData($_POST);
 
 require __DIR__.'/templates/header.php';
 
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+  require __DIR__.'/includes/contact-form.class.php';
 
+  $form = new contactForm();
+
+  if(isset($_POST['titreRadio'])) $form->title = $_POST['titreRadio'];
+  $form->name = $_POST['nom'];
+  $form->firstname = $_POST['prenom'];
+  $form->email = $_POST['email'];
+  $form->object = $_POST['objet'];
+  $form->message = $_POST['message'];
+  if(isset($_POST['formatRadio'])) $form->format = $_POST['formatRadio'];
+
+  $res = $form->validate();
+
+  echo '<p>'.($res ? "true" : "false").'</p>';
+  echo '<pre>'.print_r($form->errors, TRUE).'</pre>';
+}
 
 ?>
 <div class="container">
@@ -192,7 +209,7 @@ echo '<pre>'.print_r($_POST, TRUE).'</pre>';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // validateData($_POST);
-  echo '<p>'.count($errors).'</p>';
+  echo '<p>'.$errors.'</p>';
   echo '<pre>'.print_r(validateData($_POST), TRUE).'</pre>';
 }
 

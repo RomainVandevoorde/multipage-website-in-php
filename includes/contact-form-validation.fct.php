@@ -30,7 +30,14 @@ function validateData($array) {
   if(!isset($array['formatRadio'])) $errors['formatRadio'] = ['Information manquante'];
   else $errors ['formatRadio']= validateFormat($array['formatRadio']);
 
-  return $errors;
+  $total = 0;
+
+  foreach($errors as $e) {
+    if(!empty($e)) $total += count($e);
+  }
+
+  if($total > 0) return ['success' => FALSE, 'errors' => $errors];
+  else return ['success' => TRUE];
 
 }
 

@@ -2,6 +2,11 @@
 
 require __DIR__.'/includes/contact-form-validation.fct.php';
 
+require __DIR__.'/vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+$mailer = new PHPMailer;
+
 // if(
 //   isset($_POST['titreRadio']) &&
 // isset($_POST['nom']) &&
@@ -29,8 +34,10 @@ require __DIR__.'/templates/header.php';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
   require __DIR__.'/includes/contact-form.class.php';
+  require __DIR__.'/vendor/verot/class.upload.php/src/class.upload.php';
 
-  $form = new contactForm();
+
+  $form = new contactForm;
 
   if(isset($_POST['titreRadio'])) $form->title = $_POST['titreRadio'];
   $form->name = $_POST['nom'];
@@ -39,8 +46,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   $form->object = $_POST['objet'];
   $form->message = $_POST['message'];
   if(isset($_POST['formatRadio'])) $form->format = $_POST['formatRadio'];
+  if(isset($_FILES['file']) && $_FILES['file']['error'] === 0) $form->file = $_FILES['file'];
 
-  $res = $form->validate();
+  $res = $form->process();
 
   echo '<p>'.($res ? "true" : "false").'</p>';
   echo '<pre>'.print_r($form->errors, TRUE).'</pre>';

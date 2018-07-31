@@ -6,6 +6,8 @@ class contactForm
   const objects = ["Demande d'informations", "Demande de rendez-vous", "Autre"];
   const formats = ["html", "text"];
 
+  const accepted_types = [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG];
+
   public $errors = [];
 
   public $title = "";
@@ -16,14 +18,38 @@ class contactForm
   public $message = "";
   public $format = "";
 
+  public $file;
+  public $uploaded_file;
+
+  public function process() {
+    $this->validate();
+    if($this->countErrors() !== 0) return FALSE;
+
+    // Si le formulaire est valide et qu'il n'y a pas d'upload, c'est un succès
+    if(is_null($this->file)) {
+      $this->log();
+      return TRUE;
+    }
+
+    $up_result = $this->setFile($this->file);
+    if($up_result !== TRUE) {
+      $this->errors['file'] []= $up_result;
+      return FALSE;
+    }
+
+    $this->log();
+
+    return TRUE;
+  }
+
   public function validate() {
     $this->validateTitle();
     $this->validateName();
     $this->validateFirstName();
+    $this->validateMail();
     $this->validateObject();
     $this->validateMessage();
     $this->validateFormat();
-    return ($this->countErrors() === 0);
   }
 
   private function countErrors() {
@@ -86,7 +112,7 @@ class contactForm
     if($len > 1000) $this->errors['message'] []= "Votre message est trop long";
   }
 
-  private function log() {
+  public function log() {
     $logger = new Logger(__DIR__.'/../storage/logs.json');
     $data = [
       'date' => date("d-m-Y_H-i-s"),
@@ -95,7 +121,43 @@ class contactForm
       'email' => $this->email,
       'format' => $this->format
     ];
+    if(!is_null($this->uploaded_file)) $data['file'] = $this->uploaded_file;
     $logger->addData($data);
+    return TRUE;
+  }
+
+  public function setFile($file) {
+    if(gettype($file) !== 'array') throw new Exception('Invalid type');
+
+    $type = exif_imagetype($file['tmp_name']);
+
+    if(!$type) return "You can only upload images.";
+    if(!in_array($type, self::accepted_types)) return "Invalid image type. (jpg, jpeg, png and gif are accepted)";
+
+    $handle = new Upload($file);
+    if(!$handle->uploaded) return "The file upload failed. Please try again.";
+
+    $new_name = $this->generateImageName();
+    $handle->file_new_name_body = $new_name;
+
+    $handle->Process(__DIR__.'/../storage/img-uploads/');
+    if(!$handle->processed) return "The file upload failed. Please try again.";
+
+    // Image successfully processed
+    $this->uploaded_file = $handle->file_dst_name;
+
+    $handle->Clean();
+
+    return TRUE;
+  }
+
+  private function generateImageName() {
+    $string = "";
+    if(!empty($this->firstname)) $string .= strtolower($this->firstname).'_';
+    if(!empty($this->name)) $string .= strtolower($this->name).'_';
+    $string .= $this->email.'_';
+    $string .= date("d-m-Y_H-i-s");
+    return $string;
   }
 }
 
@@ -124,8 +186,12 @@ class Logger
   }
 }
 
-$logger = new Logger(__DIR__.'/../storage/logs.json');
-echo '<pre>'.print_r($logger->current_data, TRUE).'</pre>';
+// $form = new contactForm;
+//
+// echo $form->displayType();
+
+// $logger = new Logger(__DIR__.'/../storage/logs.json');
+// echo '<pre>'.print_r($logger->current_data, TRUE).'</pre>';
 
 // $logger->addData(array('mouais'=>'bof', 'han'=>'ouais'));
 // echo '<pre>'.print_r($logger->current_data, TRUE).'</pre>';

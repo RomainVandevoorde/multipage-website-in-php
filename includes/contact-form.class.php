@@ -1,5 +1,7 @@
 <?php
 
+// TODO: Check file size
+
 class contactForm
 {
   const titles = ["Mme", "Melle", "Mr"];

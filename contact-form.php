@@ -1,43 +1,46 @@
 <?php
 
-require __DIR__.'/includes/contact-form-validation.fct.php';
+// ********************
+// Dépendances
+// ********************
 
+if(!file_exists(__DIR__.'/includes/gmail.id.php')) {
+  echo "<p>Le fichier 'includes/gmail.id.php' est introuvable.</p>";
+  if(file_exists(__DIR__.'/includes/gmail.id.example.php')) {
+    echo "<p>Le fichier 'includes/gmail.id.example.php' est présent. Suivez les instructions qui se trouvent dedans pour permettre au script de fonctionner.</p>";
+  }
+  exit;
+}
+
+require __DIR__.'/includes/gmail.id.php';
+
+if(!defined("GMAIL_ID") || !defined("GMAIL_PW")) {
+  echo "<p>Constantes manquantes. (GMAIL_ID ou GMAIL_PW)</p>";
+  exit;
+}
+
+require __DIR__.'/includes/contact-form-validation.fct.php';
+require __DIR__.'/includes/contact-form.class.php';
+
+require __DIR__.'/vendor/verot/class.upload.php/src/class.upload.php';
 require __DIR__.'/vendor/autoload.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-$mailer = new PHPMailer;
-
-// if(
-//   isset($_POST['titreRadio']) &&
-// isset($_POST['nom']) &&
-// isset($_POST['prenom']) &&
-// isset($_POST['email']) &&
-// isset($_POST['objet']) &&
-// isset($_POST['message']) &&
-// isset($_POST['file'])) {
-//   echo '<pre>'.print_r($_POST, TRUE).'</pre>';
-// }
+// ********************
+// Script
+// ********************
 
 function oldValue($valId) {
   return ((isset($_POST[$valId])) ? $_POST[$valId] : "");
 }
 
+$form = new contactForm;
 
-// $dataInputs = array('titreRadio', 'nom', 'prenom', 'email', 'objet', 'message', 'file');
-
-$titles = array('Mr', 'Melle', 'Mme');
-$objets = array("Demande d'informations", "Demande de rendez-vous", "Autre");
-
-if($_SERVER['REQUEST_METHOD'] === 'POST') $errors = validateData($_POST);
-
-require __DIR__.'/templates/header.php';
+// $titles = array('Mr', 'Melle', 'Mme');
+$titles = $form::titles;
+// $objets = array("Demande d'informations", "Demande de rendez-vous", "Autre");
+$objets = $form::objects;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-  require __DIR__.'/includes/contact-form.class.php';
-  require __DIR__.'/vendor/verot/class.upload.php/src/class.upload.php';
-
-
-  $form = new contactForm;
 
   if(isset($_POST['titreRadio'])) $form->title = $_POST['titreRadio'];
   $form->name = $_POST['nom'];
@@ -53,6 +56,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo '<p>'.($res ? "true" : "false").'</p>';
   echo '<pre>'.print_r($form->errors, TRUE).'</pre>';
 }
+
+require __DIR__.'/templates/header.php';
 
 ?>
 <div class="container">

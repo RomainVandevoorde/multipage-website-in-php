@@ -1,5 +1,7 @@
 <?php
 
+// setLocale(LC_CTYPE, 'FR_fr.UTF-8');
+
 // ********************
 // Dépendances
 // ********************

@@ -18,16 +18,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Acceuil</a>
+              <a class="nav-link" href="index.php">Acceuil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projets</a>
+              <a class="nav-link" href="projets.php">Projets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Supports de Communication</a>
+              <a class="nav-link" href="supcom.php">Supports de Communication</a>
             </li>
           </ul>
         </div>

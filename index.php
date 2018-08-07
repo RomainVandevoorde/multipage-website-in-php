@@ -4,7 +4,7 @@ require __DIR__.'/templates/header.php';
 
 ?>
 
-<!-- 1 Card-Acceuil : besoin d'une illustration à sa droite-->
+<!-- 1 Card-Acceuil : need illustration to his right & link to Projets-page -->
 
 <div class="blueBack">
   <div class="container">
@@ -29,7 +29,7 @@ require __DIR__.'/templates/header.php';
   </div>
 </div>
 
-<!-- 2 Card-Deck-Equipe : Problème de scroll-bar horizontale & not responsive-->
+<!-- 2 Card-Deck-Equipe : horizontal scroll-bar problem & not responsive-->
 
 <div id="teamDiv">
   <h1 class="divTitle text-center">L'équipe</h1>
@@ -72,7 +72,7 @@ require __DIR__.'/templates/header.php';
   </div>
 </div>
 
-<!-- 3 Card-CASG : à cacher-->
+<!-- 3 Card-CASG : to hidden -->
 
 <div class="blueBack">
 <div class="container">

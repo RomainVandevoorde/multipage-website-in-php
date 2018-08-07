@@ -4,7 +4,7 @@ require __DIR__.'/templates/header.php';
 
  ?>
 
-<!-- Projet-Acceuil : à redesigner voir remplacer par une sidebar -->
+<!-- Projet-Acceuil : to redesign maybe to replace with a sidebar, inputs not responsive-->
 
  <div class="yellowBack">
    <div class="container">
@@ -16,8 +16,8 @@ require __DIR__.'/templates/header.php';
             </div>
             <div class="card-body">
               <p class="card-text">Notre approche vise à permettre à nos publics d’avoir plus de pouvoir d’action et d’influence sur leur environnement grâce à différents projets.</p>
-              <a href="#PermSoc" class="btn btn-primary">Permanence sociale</a>
-              <a href="#" class="btn btn-primary">Modules informatiques</a>
+              <a href="#permSoc" class="btn btn-primary">Permanence sociale</a>
+              <a href="#modInfo" class="btn btn-primary">Modules informatiques</a>
               <a href="#" class="btn btn-primary">Vie citoyenne</a>
               <a href="#" class="btn btn-primary">Entreprendre au féminin</a>
               <p class="card-text"></br>Nos projets sont subsidiés par le Service public francophone bruxellois (COCOF).</p>
@@ -28,35 +28,59 @@ require __DIR__.'/templates/header.php';
    </div>
  </div>
 
- <!-- Div-Permanence-Sociale -->
+ <!-- Div-Permanence-Sociale +- responsive except col-sm with GoogleChrome -->
 
-<div class="container" id="PermSoc">
+<div class="container proDiv" id="permSoc">
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-6">
-      <div class="card projetsCard">
+    <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+      <div class="card proCard">
         <div class="card-body">
-          <h2 class="card-title projetsTitle">Permanence sociale</h2>
+          <h2 class="card-title proTitle">Permanence sociale</h2>
           <p class="card-text">Nous proposons une permanence sociale généraliste sans rendez-vous, ouverte à tous et entièrement <b>gratuite</b>.</br></br>
             Un assistant social assure un accueil, une analyse des situations problématiques, un accompagnement social et en cas de nécessité, une orientation vers un service spécialisé.</p>
         </div>
       </div>
      </div>
-     <div class="col-sm-12 col-md-12 col-lg-2 col-xl-3">
-
+     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+       <img src="assets/img/image-perm.png" class="img-fluid proImg" alt="Responsive image">
      </div>
-     <div class="col-sm-12 col-md-12 col-lg-2 col-xl-3">
-       <div class="card projetsCard">
+     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+       <div class="card proCard">
          <div class="card-body">
-           <h2 class="card-title projetsTitle">Horaire</h2>
-           <p class="card-text">Lundi: 9h à 13h</br></br>
-            Mardi: 9h à 13h et 14h à 16h</br></br>
-            Mercredi: 9h à 13h</br></br>
-            Jeudi: 9h à 13h et 14h à 16h</br></br>
-            Vendredi: Permanence fermée</p>
+           <h2 class="card-title proTitle">Horaire</h2>
+           <p class="card-text permHor" id="">
+            <b>Lundi</b>: 9h à 13h</br></br>
+            <b>Mardi</b>: 9h à 13h et 14h à 16h</br></br>
+            <b>Mercredi</b>: 9h à 13h</br></br>
+            <b>Jeudi</b>: 9h à 13h et 14h à 16h</br></br>
+            <b>Vendredi</b>: Permanence fermée</p>
          </div>
        </div>
      </div>
   </div>
 </div>
 
- <!-- Div-Module-Informatique -->
+<!-- Div-Module-Informatique -->
+
+<div class="container proDiv" id="modInfo">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+      <div class="card proCard">
+        <div class="card-body">
+          <h2 class="card-title proTitle">Modules informatiques</h2>
+          <p class="card-text">Nous proposons une permanence sociale généraliste sans rendez-vous, ouverte à tous et entièrement <b>gratuite</b>.</br></br>
+            Un assistant social assure un accueil, une analyse des situations problématiques, un accompagnement social et en cas de nécessité, une orientation vers un service spécialisé.</p>
+        </div>
+      </div>
+     </div>
+     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+
+     </div>
+     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+
+     </div>
+  </div>
+</div>
+
+<!-- Div-Vie-Citoyenne -->
+<!-- Div-Entreprendre-au-féminin -->

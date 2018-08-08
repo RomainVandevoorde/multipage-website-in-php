@@ -6,7 +6,7 @@ require __DIR__.'/templates/header.php';
 
 <!-- 1 Card-Acceuil : need illustration to his right & link to Projets-page -->
 
-<div class="blueBack">
+<div class="blueBackGrad">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
@@ -74,7 +74,7 @@ require __DIR__.'/templates/header.php';
 
 <!-- 3 Card-CASG : to hidden -->
 
-<div class="blueBack">
+<div class="blueBackGrad">
 <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 offset-lg-4 offset-xl-4">
@@ -109,7 +109,7 @@ require __DIR__.'/templates/header.php';
     </div>
   </div>
 
-<!-- 3 Card-Soutenir & 4 Card-Volontaire -->
+<!-- 4 Card-Soutenir & 5 Card-Volontaire -->
 
 <div class="container">
   <div class="row">

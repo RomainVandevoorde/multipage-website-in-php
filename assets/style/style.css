@@ -2,7 +2,7 @@ body {
   font-size: 1.3em;
 }
 
-.blueBack {
+.blueBackGrad {
   background-image: -moz-linear-gradient(135deg, #5b86a8, #9198e5);
   background-image: -webkit-linear-gradient(135deg, #5b86a8, #9198e5);
 }
@@ -10,6 +10,10 @@ body {
 .yellowBack {
   background-image: -moz-linear-gradient(#e2ed4d, #f4ff64);
   background-image: -webkit-linear-gradient(#e2ed4d, #f4ff64);
+}
+
+.blueBack {
+  background-color: #8a47e8;
 }
 
 .whiteFont {
@@ -75,6 +79,10 @@ body {
 
 @media screen and (min-width: 768px){
   .proImgTop {padding-top: 8rem}
+}
+
+@media screen and (min-width: 768px){
+  .proImgTop2 {padding-top: 4rem}
 }
 
 .proDiv {

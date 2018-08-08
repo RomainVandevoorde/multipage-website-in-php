@@ -81,7 +81,7 @@ require __DIR__.'/templates/header.php';
           <div class="card">
           <div class="card-body">
             <h2 class="card-title">Qu'est-ce qu'un Centre d'Action </br>Sociale Globale ?</h2>
-            <p class="card-text">Les Centres d’Action Sociale Globale (CASG) sont des centres de service social généralistes bruxellois agréés par le Service public francophone bruxellois (COCOF). Ils sont au nombre de 10. Tous sont membres de la FdSS.</br></br>
+            <p class="card-text">Les Centres d’Action Sociale Globale (CASG) sont des centres de service social généralistes bruxellois agréés par le Service public francophone bruxellois (COCOF). Ils sont au nombre de 10. Tous sont membres de la <a href="http://www.fdss.be/index.php?page=home&hl=fr" target="_blank">FdSS</a>.</br></br>
             Les CASG ont pour objectif d’améliorer les relations entre leurs bénéficiaires et la société. Ils tentent de favoriser l’accès de leurs bénéficiaires aux droits fondamentaux ainsi qu’aux ressources sociales, sanitaires, économiques, culturelles, etc.</br></br>
                 <b>A qui s’adressent-ils ?</b></br></br>
             Les Centres d’Action Sociale Globale s’adressent à toute personne confrontée à une difficulté sociale qui en fait la demande.</br></br>
@@ -100,8 +100,8 @@ require __DIR__.'/templates/header.php';
                 <b>Cadre légal</b></br></br>
             Décret du 5 mars 2009 relatif à l’offre de services ambulatoires dans les domaines de l’action sociale, de la famille et de la santé, M.B., 8 mai 2009.</br></br>
             Arrêté du Collège de la Commission communautaire française du 4 juin 2009 portant application du décret du 5 mars 2009, M.B., 22 juillet 2009.</br></br>
-            <a href="">Voir la Liste des CASG</a></br></br>
-            <a href="">Voir les Publications des CASG</a></p>
+            <a href="http://www.fdss.be/CASG.php" target="_blank">Voir la Liste des CASG</a></br></br>
+            <a href="http://www.fdss.be/index.php?page=casg&hl=fr" target="_blank">Voir les Publications des CASG</a></p>
           </div>
         </div>
        </div>
@@ -136,7 +136,7 @@ require __DIR__.'/templates/header.php';
           <h2 class="card-title">... et de volontaires !</h2>
           <p class="card-text">	L’asbl Solidarité Savoir est toujours à la recherche de nouveaux volontaires prêts à nous apporter leur soutien dans nos différents projets.</br></br>
           Le type de volontariat peut varier : Animateur pour nos modules informatique, Entrepreneur expérimenté pour notre projet Entreprendre au féminin …</br></br>
-          Si vous désirez plus d’informations,</br><a href="">contactez-nous</a> !</p>
+          Si vous désirez plus d’informations,</br><a href="contact.php">contactez-nous</a> !</p>
         </div>
       </div>
     </div>

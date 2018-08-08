@@ -18,7 +18,7 @@ require __DIR__.'/templates/header.php';
               <p class="card-text">Notre approche vise à permettre à nos publics d’avoir plus de pouvoir d’action et d’influence sur leur environnement grâce à différents projets.</p>
               <a href="#permSoc" class="btn btn-secondary">Permanence sociale</a>
               <a href="#modInfo" class="btn btn-secondary">Modules informatiques</a>
-              <a href="#" class="btn btn-secondary">Entreprendre au féminin</a>
+              <a href="#enFe" class="btn btn-secondary">Entreprendre au féminin</a>
               <a href="#viCi" class="btn btn-secondary">Vie citoyenne</a>
               <p class="card-text"></br>Nos projets sont subsidiés par le Service public francophone bruxellois (COCOF).</p>
             </div>
@@ -30,7 +30,7 @@ require __DIR__.'/templates/header.php';
 
  <!-- Div-Permanence-Sociale +- responsive except col-sm with GoogleChrome -->
 
-<div class="container proDiv" id="permSoc">
+<div class="container proDiv proDivSpace" id="permSoc">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
       <div class="card proCard">
@@ -62,7 +62,7 @@ require __DIR__.'/templates/header.php';
 
 <!-- Div-Module-Informatique -->
 
-<div class="container proDiv" id="modInfo">
+<div class="container proDiv proDivSpace" id="modInfo">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
       <div class="card proCard">
@@ -104,13 +104,15 @@ require __DIR__.'/templates/header.php';
 
 <!-- Div-Entreprendre-au-féminin -->
 
-<div class="container proDiv" id="enFe">
+<div class="container proDiv proDivSpace" id="enFe">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
       <div class="card proCard">
         <div class="card-body">
           <h2 class="card-title proTitle">Entreprende au féminin</h2>
-          <p class="card-text">Solidarité Savoir soutient depuis 2014 les femmes qui souhaitent développer un projet social et/ou commercial sur la région bruxelloise. </br></br>Des rencontres et des formations courtes sont proposées chaque année sur diverses thématiques (création d’asbl, recherche de subsides, créativité, gestion financière, …).<br><br>Pour être tenu informé des prochaines dates : <a href="contact.php">Contactez nous</a></p>
+          <p class="card-text">Solidarité Savoir soutient depuis 2014 les femmes qui souhaitent développer un projet social et/ou commercial sur la région bruxelloise.
+          </br></br>Des rencontres et des formations courtes sont proposées chaque année sur diverses thématiques (création d’asbl, recherche de subsides, créativité, gestion financière, …).
+          <br><br>Pour être tenu informé des prochaines dates : <a href="contact.php">Contactez nous</a></p>
         </div>
       </div>
      </div>
@@ -122,7 +124,7 @@ require __DIR__.'/templates/header.php';
 
 <!-- Div-Vie-Citoyenne -->
 
-<div class="container proDiv" id="viCi">
+<div class="container proDivSpace" id="viCi">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-5 col-xl-5">
       <div class="card proCard">
@@ -155,20 +157,26 @@ require __DIR__.'/templates/header.php';
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/cohesion-sociale/" class="whiteFont" target="_blank">Quelques exercices clavier-souris ici !</a>
+        <a href="https://solidarite-savoir.be/cohesion-sociale/" class="whiteFont" target="_blank">La cohésion sociale, c'est quoi ?</a>
       </div>
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/listes-des-associations/" class="whiteFont" target="_blank">Liste de tous les espaces publics numériques de Bruxelles (matériel informatique mis à disposition gratuitement).</a>
+        <a href="https://solidarite-savoir.be/listes-des-associations/" class="whiteFont" target="_blank">Liste d'associations en citoyenneté.>
       </div>
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/seances-dinformation/" class="whiteFont" target="_blank">Adresses pour trouver des ordinateurs d'occasion.</a>
+        <a href="https://solidarite-savoir.be/seances-dinformation/" class="whiteFont" target="_blank">Séances d'information.</a>
       </div>
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/partenaires/" class="whiteFont" target="_blank">Adresses pour trouver des ordinateurs d'occasion.</a>
+        <a href="https://solidarite-savoir.be/partenaires/" class="whiteFont" target="_blank">Nos partenaires.</a>
       </div>
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/ressources/" class="whiteFont" target="_blank">Adresses pour trouver des ordinateurs d'occasion.</a>
+        <a href="https://solidarite-savoir.be/ressources/" class="whiteFont" target="_blank">Quelques ressources.</a>
       </div>
     </div>
   </div>
 </div>
+
+<?php
+
+require __DIR__.'/templates/footer.php';
+
+?>

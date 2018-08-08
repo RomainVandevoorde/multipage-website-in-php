@@ -8,6 +8,7 @@
     <title>Solidarité Savoir ASBL</title>
   </head>
   <body>
+<!-- Collapse and sticky-top dont work ! ---------------->    
     <div id="header">
       <img src="assets/img/logo.jpg" id="header-logo" alt="Logo" height="100" width="100" >
       <h1 id="header-title"> Solidarité Savoir ASBL </h1>

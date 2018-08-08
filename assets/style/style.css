@@ -1,3 +1,23 @@
+body {
+  font-size: 1.3em;
+}
+
+.blueBack {
+  background-image: -moz-linear-gradient(135deg, #5b86a8, #9198e5);
+  background-image: -webkit-linear-gradient(135deg, #5b86a8, #9198e5);
+}
+
+.yellowBack {
+  background-image: -moz-linear-gradient(#e2ed4d, #f4ff64);
+  background-image: -webkit-linear-gradient(#e2ed4d, #f4ff64);
+}
+
+.whiteFont {
+  color: white;
+}
+
+/* index-PAGE -------------------------------------*/
+
 #header-logo {
   display: inline;
   margin-left: 10px;
@@ -10,24 +30,12 @@
   margin-left: 5px;
 }
 
-body {
-  font-size: 1.3em;
-}
+/* index-PAGE -------------------------------------*/
 
 .container {
   width: 100%;
   padding-top: 2%;
   padding-bottom: 2%;
-}
-
-.blueBack {
-  background-image: -moz-linear-gradient(135deg, #5b86a8, #9198e5);
-  background-image: -webkit-linear-gradient(135deg, #5b86a8, #9198e5);
-}
-
-.yellowBack {
-  background-image: -moz-linear-gradient(#e2ed4d, #f4ff64);
-  background-image: -webkit-linear-gradient(#e2ed4d, #f4ff64);
 }
 
 .divTitle {
@@ -51,6 +59,8 @@ body {
  padding-bottom: 15%;
 }
 
+/* projets-PAGE -------------------------------------*/
+
 .proTitle {
   border-left: solid #5b86a8 4px;
   margin-left: 10%;
@@ -64,13 +74,13 @@ body {
 }
 
 @media screen and (min-width: 768px){
-  .proImg {padding-top: 8rem}
-}
-
-@media screen and (max-width: 768px){
-  .proImg {margin-left: 25%;}
+  .proImgTop {padding-top: 8rem}
 }
 
 .proDiv {
   border-bottom: solid #5b86a8 4px;
+}
+
+#modInfoLinks {
+  padding-top: 1rem;
 }

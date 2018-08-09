@@ -4,7 +4,7 @@ require __DIR__.'/templates/header.php';
 
  ?>
 
-<!-- Projet-Acceuil : to redesign maybe to replace with a sidebar, inputs not responsive -->
+<!-- Projet-Acceuil : to redesign maybe to replace with a sidebar, inputs not responsive, -->
 
  <div class="yellowBack">
    <div class="container">
@@ -160,7 +160,7 @@ require __DIR__.'/templates/header.php';
         <a href="https://solidarite-savoir.be/cohesion-sociale/" class="whiteFont" target="_blank">La cohésion sociale, c'est quoi ?</a>
       </div>
       <div class="alert blueBackGrad" role="alert">
-        <a href="https://solidarite-savoir.be/listes-des-associations/" class="whiteFont" target="_blank">Liste d'associations en citoyenneté.>
+        <a href="https://solidarite-savoir.be/listes-des-associations/" class="whiteFont" target="_blank">Liste d'associations en citoyenneté.</a>
       </div>
       <div class="alert blueBackGrad" role="alert">
         <a href="https://solidarite-savoir.be/seances-dinformation/" class="whiteFont" target="_blank">Séances d'information.</a>

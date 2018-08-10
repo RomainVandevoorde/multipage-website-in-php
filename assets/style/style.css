@@ -1,0 +1,119 @@
+body {
+  font-size: 1.3em;
+}
+
+.blueBackGrad {
+  background-image: -moz-linear-gradient(135deg, #5b86a8, #9198e5);
+  background-image: -webkit-linear-gradient(135deg, #5b86a8, #9198e5);
+}
+
+.yellowBack {
+  background-image: -moz-linear-gradient(#e2ed4d, #f4ff64);
+  background-image: -webkit-linear-gradient(#e2ed4d, #f4ff64);
+}
+
+.blueBack {
+  background-color: #8a47e8;
+}
+
+.whiteFont {
+  color: white;
+}
+
+/* page-header -------------------------------------*/
+
+#header-logo {
+  display: inline;
+  margin-left: 10px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#header-title {
+  display: inline;
+  margin-left: 5px;
+}
+
+/* page-footer -------------------------------------*/
+
+#page-footer a {
+    color: white;
+}
+
+#copyrightAnd {
+  display: inline;
+}
+
+.fa {
+    padding: 15px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: #3B5998;
+}
+
+/* index-PAGE -------------------------------------*/
+
+.container {
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.divTitle {
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#teamDeck {
+  padding: 2%;
+  background-image: -moz-linear-gradient(#e2ed4d, #f4ff64);
+  background-image: -webkit-linear-gradient(#e2ed4d, #f4ff64);
+}
+
+#teamDiv {
+ padding-bottom: 15%;
+}
+
+/* projets-PAGE -------------------------------------*/
+
+.proTitle {
+  border-left: solid #5b86a8 4px;
+  margin-left: 10%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  padding: 0.5rem;
+}
+
+.proCard {
+  border: none;
+}
+
+@media screen and (min-width: 768px){
+  .proImgTop {padding-top: 8rem}
+  .proDivSpace {
+    padding-bottom: 15%;
+    padding-top: 15%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .proImgTop2 {padding-top: 4rem}
+}
+
+.proDiv {
+  border-bottom: solid #5b86a8 4px;
+}
+
+#modInfoLinks {
+  padding-top: 1rem;
+}

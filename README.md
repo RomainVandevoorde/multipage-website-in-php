@@ -12,7 +12,7 @@ Projet inter-classes de 7 jours de la formation BeCode.org ayant pour but d'aqu�
 Apprenants : Romain Vandevoorde *(Lovelace II)* et Nathan Houtain *(Johnson II)*.
 
 # Consignes :
-Redesigner et déployer un site à caractère social (donné) en 5 pages maximum. 
+Redesigner et déployer un site à caractère social (donné) en 5 pages maximum, dont une "contact" ayant un formulaire PHP. 
 Utiliser également Lightouse Test.  
 Un site différent par groupe, notre site d'origine ; https://solidarite-savoir.be/
  

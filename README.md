@@ -1,9 +1,9 @@
 # multipage-website-in-php
 
-# Projet : Asbl Solidarité Savoir
+## Projet : Asbl Solidarité Savoir
 ### *(multipage-website-in-php)*
 
-# Aperçu :
+## Aperçu :
 ![apercu](/assets/img/apercu-10-08.png)
 
 # Objectif et situation :

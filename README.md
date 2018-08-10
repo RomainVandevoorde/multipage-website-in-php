@@ -13,7 +13,7 @@ Apprenants : Romain Vandevoorde *(Lovelace II)* et Nathan Houtain *(Johnson II)*
 
 # Consignes :
 Redesigner et déployer un site à caractère social (donné) en 5 pages maximum. 
-Faire également une Progressive Web Application et utiliser Lightouse Test et W3C Validator.  
+Utiliser également Lightouse Test.  
 Un site différent par groupe, notre site d'origine ; https://solidarite-savoir.be/
  
 Lien vers les consignes officielles : https://github.com/becodeorg/Johnson2/tree/master/projets/multipage-website-in-php

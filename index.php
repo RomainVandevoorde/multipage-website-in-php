@@ -35,35 +35,35 @@ require __DIR__.'/templates/header.php';
   <h1 class="divTitle text-center">L'équipe</h1>
   <div class="card-deck" id="teamDeck">
     <div class="card">
-      <img class="card-img-top mx-auto" src="assets/img/man-port1.jpg" alt="Card image cap">
+      <img class="card-img-top mx-auto" src="assets/img/man-port1.jpg" alt="Portrait libre de droit d'un inconnu">
       <div class="card-body">
         <h5 class="card-title"><b>Michael Vaneeckhout</b></h5>
         <p class="card-text">Assistant social & coordinateur général</br><a href="mailto:m.vaneeckhout@solidarite-savoir.be">m.vaneeckhout@solidarite-savoir.be</a></p>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top mx-auto" src="assets/img/woman-port1.jpg" alt="Card image cap">
+      <img class="card-img-top mx-auto" src="assets/img/woman-port1.jpg" alt="Portrait libre de droit d'une inconnu">
       <div class="card-body">
         <h5 class="card-title"><b>Anita Rodrigues</b></h5>
         <p class="card-text">Assistante sociale</br><a href="mailto:a.rodrigues@solidarite-savoir.be">a.rodrigues@solidarite-savoir.be</a></p>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top mx-auto" src="assets/img/woman-port3.jpeg" alt="Card image cap">
+      <img class="card-img-top mx-auto" src="assets/img/woman-port3.jpeg" alt="Portrait libre de droit d'une inconnu">
       <div class="card-body">
         <h5 class="card-title"><b>Valérie Hossé</b></h5>
         <p class="card-text">Assistante sociale</br><a href="mailto:v.hosse@solidarite-savoir.be">v.hosse@solidarite-savoir.be</a></p>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top mx-auto" src="assets/img/woman-port2.jpg" alt="Card image cap">
+      <img class="card-img-top mx-auto" src="assets/img/woman-port2.jpg" alt="Portrait libre de droit d'une inconnu">
       <div class="card-body">
         <h5 class="card-title"><b>Brigitte Wolter</b></h5>
         <p class="card-text">Agent administratif</br><a href="mailto:b.wolter@solidarite-savoir.be">b.wolter@solidarite-savoir.be</a></p>
       </div>
     </div>
     <div class="card">
-      <img class="card-img-top mx-auto" src="assets/img/man-port2.jpg" alt="Card image cap">
+      <img class="card-img-top mx-auto" src="assets/img/man-port2.jpg" alt="Portrait libre de droit d'un inconnu">
       <div class="card-body">
         <h5 class="card-title"><b>Déo Nendumba</b></h5>
         <p class="card-text">Agent d’accueil</br><a href="mailto:accueil@solidarite-savoir.be">accueil@solidarite-savoir.be</a></p>

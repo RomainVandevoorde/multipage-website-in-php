@@ -4,6 +4,29 @@ require __DIR__.'/templates/header.php';
 
  ?>
 
+<!-- Top Scroll Button -->
+
+<script type="text/javascript">
+// When the user scrolls down 550px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+      document.getElementById("myBtn").style.display = "block";
+  } else {
+      document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
 <!-- Projet-Acceuil : to redesign maybe to replace with a sidebar, inputs not responsive, -->
 
  <div class="yellowBack">

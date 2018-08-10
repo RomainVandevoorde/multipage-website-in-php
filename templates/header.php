@@ -13,6 +13,10 @@
     <!-- <div id="header"> -->
       <img src="assets/img/logo.jpg" id="header-logo" alt="Logo" height="100" width="100" >
       <h1 id="header-title"> Solidarité Savoir ASBL </h1>
+      <img src="assets/img/back-picture-4.jpg" class="headerImg" alt="Atelier 'Entreprendre au féminin'" height="207">
+      <img src="assets/img/back-picture-1.jpg" class="headerImg" alt="Sortie en bateau lors d'un module d'initiation à la vie citoyenne">
+      <img src="assets/img/back-picture-5.jpg" class="headerImg" alt="Atelier de groupe lors d'un module d'initiation à la vie citoyenne">
+      <!-- <img src="assets/img/back-picture-4.jpg" alt="Logo"> -->
       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

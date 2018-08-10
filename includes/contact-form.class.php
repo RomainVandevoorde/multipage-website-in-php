@@ -189,6 +189,7 @@ class contactForm
   private function sendMail() {
     $mail = new Mailer;
     $name = (!empty($this->firstname) && !empty($this->name)) ? $this->firstname." ".$this->name : "";
+    $mail->Subject = 'PHPMailer GMail SMTP test';
     $mail->mailer->addAddress($this->email, $name);
     if($this->format === "text") {
       if(!is_null($this->file)) {

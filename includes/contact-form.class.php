@@ -193,7 +193,7 @@ class contactForm
     if($this->format === "text") {
       if(!is_null($this->file)) {
         $mail->mailer->body = "Hello ! This is a plain text message !\nYour image is attached to this mail";
-        $mail->mailer->addAttachment($this->uploaded_file);
+        // $mail->mailer->addAttachment($this->uploaded_file);
       }
       else {
         $mail->mailer->body = "Hello ! This is a plain text message !\nYoudidn't attach any image.";

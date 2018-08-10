@@ -1,17 +1,24 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+require __DIR__.'/../vendor/autoload.php';
+
 // TODO: Check file size
 
 class contactForm
 {
+  // Inputs acceptables pour les champs titre, objet et format
   const titles = ["Mme", "Melle", "Mr"];
   const objects = ["Demande d'informations", "Demande de rendez-vous", "Autre"];
   const formats = ["html", "text"];
 
+  // Formats d'image acceptables
   const accepted_types = [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG];
 
+  // Will contain errors if there are any
   public $errors = [];
 
+  // Default values to empty strings
   public $title = "";
   public $name = "";
   public $firstname = "";
@@ -20,15 +27,23 @@ class contactForm
   public $message = "";
   public $format = "";
 
+  // Will contain the tmp file
   public $file;
+  // Will contain the uploaded (moved to the appropriate folder) file
   public $uploaded_file;
 
+  // Processes the form. Returns TRUE on success, FALSE on failure
   public function process() {
     $this->validate();
     if($this->countErrors() !== 0) return FALSE;
 
     // Si le formulaire est valide et qu'il n'y a pas d'upload, c'est un succès
     if(is_null($this->file)) {
+      $res_mail = $this->sendMail();
+      if(!$res_mail) {
+        $this->errors['mailer'] []= $res_mail;
+        return FALSE;
+      }
       $this->log();
       return TRUE;
     }
@@ -39,11 +54,18 @@ class contactForm
       return FALSE;
     }
 
+    $res_mail = $this->sendMail();
+    if(!$res_mail) {
+      $this->errors['mailer'] []= $res_mail;
+      return FALSE;
+    }
+
     $this->log();
 
     return TRUE;
   }
 
+  // Validates all the properties of the form. Returns void
   public function validate() {
     $this->validateTitle();
     $this->validateName();
@@ -54,6 +76,7 @@ class contactForm
     $this->validateFormat();
   }
 
+  // Counts the errors in this object
   private function countErrors() {
     $count = 0;
     if(count($this->errors) < 1) return 0;
@@ -153,13 +176,44 @@ class contactForm
     return TRUE;
   }
 
+  // Generates a unique name for uploaded files
   private function generateImageName() {
-    $string = "";
+    $string = "upload_";
     if(!empty($this->firstname)) $string .= strtolower($this->firstname).'_';
     if(!empty($this->name)) $string .= strtolower($this->name).'_';
-    $string .= $this->email.'_';
+    $string .= uniqid().'_';
     $string .= date("d-m-Y_H-i-s");
     return $string;
+  }
+
+  private function sendMail() {
+    $mail = new Mailer;
+    $name = (!empty($this->firstname) && !empty($this->name)) ? $this->firstname." ".$this->name : "";
+    $mail->mailer->addAddress($this->email, $name);
+    if($this->format === "text") {
+      if(!is_null($this->file)) {
+        $mail->mailer->body = "Hello ! This is a plain text message !\nYour image is attached to this mail";
+        $mail->mailer->addAttachment($this->uploaded_file);
+      }
+      else {
+        $mail->mailer->body = "Hello ! This is a plain text message !\nYoudidn't attach any image.";
+      }
+      $mail->mailer->isHTML(false);
+    }
+    else {
+      if(!is_null($this->file)) {
+        $mail->mailer->body = "<h2>Hello !</h2><h3>This is an HTML message</h3><p>Here's your image:</p><p><img src=\"".$this->uploaded_file."\" /></p>";
+      } else {
+        $mail->mailer->body = "<h2>Hello !</h2><h3>This is an HTML message</h3>";
+      }
+      $mail->mailer->isHTML(true);
+    }
+
+    if (!$mail->mailer->send()) {
+        return $mail->mailer->ErrorInfo;
+    } else {
+        return TRUE;
+    }
   }
 }
 
@@ -182,9 +236,26 @@ class Logger
   private function getCurrentData() {
     $this->current_data = json_decode(file_get_contents($this->file), TRUE);
   }
+}
 
-  public function getLastImageID() {
+class Mailer
+{
 
+  public $mailer = NULL;
+
+  public function __construct() {
+    $this->mailer = new PHPMailer;
+    $this->mailer->isSMTP();
+    $this->mailer->SMTPDebug = 0;
+
+    $this->mailer->Host = 'smtp.gmail.com';
+    $this->mailer->Port = 587;
+    $this->mailer->SMTPSecure = 'tls';
+    $this->mailer->SMTPAuth = true;
+    $this->mailer->Username = GMAIL_ID;
+    $this->mailer->Password = GMAIL_PW;
+
+    $this->mailer->setFrom('romain.vandevoorde.dev@gmail.com', 'Romain Vandevoorde');
   }
 }
 

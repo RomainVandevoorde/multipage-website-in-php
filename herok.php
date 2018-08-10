@@ -1,5 +1,7 @@
 <?php
 
-echo getenv('GMAIL_ID') || exit('GMAIL_ID not found');
+$id = getenv('GMAIL_ID');
+
+var_dump($id);
 
 ?>

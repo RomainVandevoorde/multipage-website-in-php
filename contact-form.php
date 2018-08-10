@@ -6,15 +6,18 @@
 // Dépendances
 // ********************
 
-if(!file_exists(__DIR__.'/includes/gmail.id.php')) {
-  echo "<p>Le fichier 'includes/gmail.id.php' est introuvable.</p>";
-  if(file_exists(__DIR__.'/includes/gmail.id.example.php')) {
-    echo "<p>Le fichier 'includes/gmail.id.example.php' est présent. Suivez les instructions qui se trouvent dedans pour permettre au script de fonctionner.</p>";
-  }
-  exit;
-}
+// if(!file_exists(__DIR__.'/includes/gmail.id.php')) {
+//   echo "<p>Le fichier 'includes/gmail.id.php' est introuvable.</p>";
+//   if(file_exists(__DIR__.'/includes/gmail.id.example.php')) {
+//     echo "<p>Le fichier 'includes/gmail.id.example.php' est présent. Suivez les instructions qui se trouvent dedans pour permettre au script de fonctionner.</p>";
+//   }
+//   exit;
+// }
 
-require __DIR__.'/includes/gmail.id.php';
+
+if(file_exists(__DIR__.'/includes/gmail.id.php')) {
+  require __DIR__.'/includes/gmail.id.php';
+}
 
 if(!defined("GMAIL_ID") || !defined("GMAIL_PW")) {
   echo "<p>Constantes manquantes. (GMAIL_ID ou GMAIL_PW)</p>";

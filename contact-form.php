@@ -14,6 +14,10 @@
 //   exit;
 // }
 
+if(getenv('GMAIL_ID') && getenv('GMAIL_PW')) {
+  define("GMAIL_ID", getenv('GMAIL_ID'));
+  define("GMAIL_PW", getenv('GMAIL_PW'));
+}
 
 if(file_exists(__DIR__.'/includes/gmail.id.php')) {
   require __DIR__.'/includes/gmail.id.php';
